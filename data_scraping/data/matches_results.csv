@@ -1,0 +1,58 @@
+Season,Gameweek,Date,Day,Game time,Home team,Away team,Home team score,Away team score,Winner,Stadium
+19/20,1,2019-08-24,Sat,18:00,Maccabi Haifa,Hapoel Raanana,4,3,Maccabi Haifa,Sammi Ofer
+19/20,1,2019-08-24,Sat,19:00,Hapoel Hadera,SC Ashdod,1,1,Draw,Netanya
+19/20,1,2019-08-24,Sat,20:30,Sektzia Nes Ziona,Maccabi Tel Aviv,0,2,Maccabi Tel Aviv,HaMoshava
+19/20,1,2019-08-25,Sun,19:00,Hapoel Kfar Saba,Hapoel Haifa,0,1,Hapoel Haifa,HaMoshava
+19/20,1,2019-08-25,Sun,20:00,Bnei Yehuda,Ironi Kiryat Shmona,2,1,Bnei Yehuda,Bloomfield Stadium
+19/20,1,2019-08-25,Sun,20:15,Beitar Jerusalem,Hapoel Beer Sheva,0,0,Draw,Teddi
+19/20,1,2019-08-26,Mon,20:15,Hapoel Tel Aviv,Maccabi Netanya,0,0,Draw,Bloomfield Stadium
+19/20,2,2019-08-31,Sat,18:00,SC Ashdod,Hapoel Tel Aviv,2,1,SC Ashdod,Yud-Alef
+19/20,2,2019-08-31,Sat,19:00,Maccabi Netanya,Sektzia Nes Ziona,3,0,Maccabi Netanya,Netanya
+19/20,2,2019-08-31,Sat,20:30,Hapoel Haifa,Maccabi Haifa,0,0,Draw,Sammi Ofer
+19/20,2,2019-09-01,Sun,19:50,Hapoel Beer Sheva,Hapoel Hadera,3,0,Hapoel Beer Sheva,Turner Toto
+19/20,2,2019-09-01,Sun,20:00,Hapoel Raanana,Beitar Jerusalem,2,1,Hapoel Raanana,HaMoshava
+19/20,2,2019-09-01,Sun,20:15,Maccabi Tel Aviv,Bnei Yehuda,0,0,Draw,Bloomfield Stadium
+19/20,2,2019-09-02,Mon,20:00,Ironi Kiryat Shmona,Hapoel Kfar Saba,1,3,Hapoel Kfar Saba,Kiryat Shmona
+19/20,3,2019-09-14,Sat,18:00,Maccabi Haifa,Ironi Kiryat Shmona,2,0,Maccabi Haifa,Sammi Ofer
+19/20,3,2019-09-14,Sat,19:00,Hapoel Tel Aviv,Sektzia Nes Ziona,1,1,Draw,Bloomfield Stadium
+19/20,3,2019-09-14,Sat,19:00,Hapoel Hadera,Hapoel Raanana,4,0,Hapoel Hadera,Netanya
+19/20,3,2019-09-14,Sat,20:30,Hapoel Kfar Saba,Maccabi Tel Aviv,0,1,Maccabi Tel Aviv,HaMoshava
+19/20,3,2019-09-15,Sun,19:00,Bnei Yehuda,Maccabi Netanya,0,0,Draw,Bloomfield Stadium
+19/20,3,2019-09-15,Sun,20:15,SC Ashdod,Hapoel Beer Sheva,2,2,Draw,Yud-Alef
+19/20,3,2019-09-16,Mon,20:15,Beitar Jerusalem,Hapoel Haifa,0,2,Hapoel Haifa,Teddi
+19/20,4,2019-09-21,Sat,18:00,Maccabi Netanya,Hapoel Kfar Saba,2,2,Draw,Netanya
+19/20,4,2019-09-21,Sat,19:00,Sektzia Nes Ziona,Bnei Yehuda,0,1,Bnei Yehuda,HaMoshava
+19/20,4,2019-09-21,Sat,20:30,Ironi Kiryat Shmona,Beitar Jerusalem,0,2,Beitar Jerusalem,Kiryat Shmona
+19/20,4,2019-09-21,Sat,20:30,Maccabi Tel Aviv,Maccabi Haifa,1,0,Maccabi Tel Aviv,Bloomfield Stadium
+19/20,4,2019-09-22,Sun,19:00,Hapoel Raanana,SC Ashdod,1,1,Draw,HaMoshava
+19/20,4,2019-09-22,Sun,20:15,Hapoel Haifa,Hapoel Hadera,1,2,Hapoel Hadera,Sammi Ofer
+19/20,4,2019-09-23,Mon,20:15,Hapoel Beer Sheva,Hapoel Tel Aviv,3,0,Hapoel Beer Sheva,Turner Toto
+19/20,5,2019-09-25,Wed,19:00,Hapoel Kfar Saba,Sektzia Nes Ziona,1,1,Draw,HaMoshava
+19/20,5,2019-09-25,Wed,20:15,Maccabi Haifa,Maccabi Netanya,3,0,Maccabi Haifa,Sammi Ofer
+19/20,5,2019-09-28,Sat,17:00,Hapoel Hadera,Ironi Kiryat Shmona,2,2,Draw,Netanya
+19/20,5,2019-09-28,Sat,18:00,SC Ashdod,Hapoel Haifa,1,1,Draw,Yud-Alef
+19/20,5,2019-09-28,Sat,19:30,Hapoel Tel Aviv,Bnei Yehuda,1,1,Draw,Bloomfield Stadium
+19/20,5,2019-09-28,Sat,20:30,Beitar Jerusalem,Maccabi Tel Aviv,0,4,Maccabi Tel Aviv,Teddi
+19/20,5,2019-09-28,Sat,20:30,Hapoel Beer Sheva,Hapoel Raanana,1,0,Hapoel Beer Sheva,Turner Toto
+19/20,6,2019-10-05,Sat,18:00,Maccabi Tel Aviv,Hapoel Hadera,0,0,Draw,Bloomfield Stadium
+19/20,6,2019-10-05,Sat,19:00,Sektzia Nes Ziona,Maccabi Haifa,0,3,Maccabi Haifa,HaMoshava
+19/20,6,2019-10-05,Sat,20:30,Hapoel Haifa,Hapoel Beer Sheva,0,3,Hapoel Beer Sheva,Sammi Ofer
+19/20,6,2019-10-06,Sun,19:00,Bnei Yehuda,Hapoel Kfar Saba,0,1,Hapoel Kfar Saba,Bloomfield Stadium
+19/20,6,2019-10-06,Sun,20:00,Hapoel Raanana,Hapoel Tel Aviv,2,2,Draw,HaMoshava
+19/20,6,2019-10-06,Sun,20:15,Maccabi Netanya,Beitar Jerusalem,0,3,Beitar Jerusalem,Netanya
+19/20,6,2019-10-07,Mon,20:00,Ironi Kiryat Shmona,SC Ashdod,2,0,Ironi Kiryat Shmona,Kiryat Shmona
+19/20,7,2019-10-19,Sat,18:00,Hapoel Tel Aviv,Hapoel Kfar Saba,2,1,Hapoel Tel Aviv,Bloomfield Stadium
+19/20,7,2019-10-19,Sat,19:00,Hapoel Hadera,Maccabi Netanya,1,0,Hapoel Hadera,Netanya
+19/20,7,2019-10-19,Sat,19:00,Hapoel Beer Sheva,Ironi Kiryat Shmona,2,1,Hapoel Beer Sheva,Turner Toto
+19/20,7,2019-10-19,Sat,20:30,Sektzia Nes Ziona,Beitar Jerusalem,0,4,Beitar Jerusalem,HaMoshava
+19/20,7,2019-10-21,Mon,18:00,Hapoel Raanana,Hapoel Haifa,0,0,Draw,HaMoshava
+19/20,7,2019-10-21,Mon,20:00,SC Ashdod,Maccabi Tel Aviv,0,1,Maccabi Tel Aviv,Yud-Alef
+19/20,7,2019-10-21,Mon,20:15,Maccabi Haifa,Bnei Yehuda,1,1,Draw,Sammi Ofer
+19/20,8,2019-10-26,Sat,16:00,Hapoel Haifa,Hapoel Tel Aviv,3,0,Hapoel Haifa,Sammi Ofer
+19/20,8,2019-10-26,Sat,18:00,Ironi Kiryat Shmona,Hapoel Raanana,2,1,Ironi Kiryat Shmona,Kiryat Shmona
+19/20,8,2019-10-26,Sat,19:30,Maccabi Netanya,SC Ashdod,2,4,SC Ashdod,Netanya
+19/20,8,2019-10-26,Sat,20:30,Hapoel Kfar Saba,Maccabi Haifa,0,3,Maccabi Haifa,HaMoshava
+19/20,8,2019-10-27,Sun,19:00,Sektzia Nes Ziona,Hapoel Hadera,2,2,Draw,HaMoshava
+19/20,8,2019-10-27,Sun,20:15,Bnei Yehuda,Beitar Jerusalem,0,2,Beitar Jerusalem,Bloomfield Stadium
+19/20,8,2019-10-28,Mon,20:15,Maccabi Tel Aviv,Hapoel Beer Sheva,2,0,Maccabi Tel Aviv,Bloomfield Stadium
+19/20,16,2019-12-28,Sat,,Hapoel Beer Sheva,SC Ashdod,0,0,Draw,
