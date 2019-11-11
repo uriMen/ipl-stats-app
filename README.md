@@ -3,6 +3,8 @@
 An interactive visualization app for displaying [Israeli Premier League](https://www.football.co.il/en/) statistics.  
 The plots were designed with a purpose of giving the user a deeper perspective about teams and players performances, thus gaining useful insights.
 
+Some example plots:
+
 ![](https://github.com/uriMen/ipl-stats-app/blob/master/examples/app_example%20(3).png) ![](https://github.com/uriMen/ipl-stats-app/blob/master/examples/app_example2.png)
 
 ## Motivation
