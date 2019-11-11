@@ -40,6 +40,8 @@ and change the parameter `gws` to include the last played round. For example, if
 gws = range(1, 14)
 ```
 
+That's it, you're ready to trun the data collector.
+
 ##### Notes:
 
 1. Stats can be collected for previous seasons as well, by changing the parameter `seasons` in the above mentioned function, for example 
