@@ -15,4 +15,4 @@ Creating an end-to-end data project with python, which includes collecting (web 
 
 After installation (details below), running the app is as easy as typing `bokeh serve --show ipl-stats-app` in your terminal. This will automatically open the interactive dashboard in your browser.
 
-![](https://github.com/uriMen/ipl-stats-app/blob/master/examples/app_example.gif)
+![](https://github.com/uriMen/ipl-stats-app/blob/master/examples/app_example4.gif)
