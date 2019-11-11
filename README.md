@@ -40,7 +40,7 @@ and change the parameter `gws` to include the last played round. For example, if
 gws = range(1, 14)
 ```
 
-That's it, you're ready to trun the data collector.
+That's it, you're ready to run the data collector.
 
 ##### Notes:
 
