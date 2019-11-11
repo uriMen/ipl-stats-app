@@ -1,6 +1,7 @@
 # Football Stats Dashboard
 
-An interactive visualization app for displaying [Israeli Premier League](https://www.football.co.il/en/) stats, in an insightful way.
+An interactive visualization app for displaying [Israeli Premier League](https://www.football.co.il/en/) statistics.  
+The plots were designed with a purpose of giving the user a deeper perspective about teams and players performances, thus gaining useful insights.
 
 ## Motivation
 
