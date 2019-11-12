@@ -49,3 +49,22 @@ That's it, you're ready to run the data collector.
 seasons = ['18/19', '19/20']
 ``` 
 However, currently matches results of other seasons are not available in the website, so it might cause errors.
+
+## Next Steps and Improvements
+
+* Though some cool insights can be extracted from the current available views, this version is merely a proof-of-concept (or an abilities display if you will). Tons of other plots/views can be added. The data is pretty detailed and inspiration can be found in [bokeh's gallery](https://docs.bokeh.org/en/latest/docs/gallery.html).  
+The architecture of the app makes it rather easy to add tabs: each tab is created in a separate `.py` file under `scripts` directory, and is imported and executed in the `main.py` script, for example:
+```python
+from scripts.basic_team_stats import basic_teams_stats_tab
+...
+tab1 = basic_teams_stats_tab(team_stats_df)
+...
+tabs = Tabs(tabs=[tab1, tab2, tab3])
+```
+* Improvements to the data scripts:
+1. Make data table update-able: when running `main_data_collector.py` script 3 out of 4 tables are being fully recreated rather than being only updated if possible.
+2. Automate data updating with the app launching.
+
+## Contact
+
+Thank you for stopping by. Feel free to comment or advise or reach out via twitter [@UriMenkes](https://twitter.com/urimenkes).
