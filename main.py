@@ -10,6 +10,7 @@ from bokeh.io import curdoc
 from bokeh.models.widgets import Tabs
 
 from data_scraping.scripts.data_funcs import get_gw_match_result, get_opponent
+from data_scraping.scripts.create_db import create_connection
 from scripts.basic_team_stats import basic_teams_stats_tab
 from scripts.attacks_origin import attacks_origin_tab
 from scripts.players_performances import players_performance_tab
@@ -17,16 +18,27 @@ from scripts.players_performances import players_performance_tab
 # Import data and create dataFrames
 data_dir = os.path.join(os.path.dirname(__file__),
                         os.path.join('data_scraping', 'data'))
-team_stats_df = pd.read_csv(os.path.join(data_dir, 'teams_stats_by_gw.csv'))
-players_stats_df = pd.read_csv(os.path.join(data_dir,
-                                            'players_stats_by_gw.csv'))
-players_info_df = pd.read_csv(os.path.join(data_dir, 'players_info.csv'))
-results_df = pd.read_csv(os.path.join(data_dir, 'matches_results.csv'))
+# connect to database
+db_file_path = os.path.join(data_dir, 'ipl_data.db')
+conn = create_connection(db_file_path)
 
-team_stats_df['Match result'] = team_stats_df.apply(get_gw_match_result,
-                                                    args=[results_df], axis=1)
-team_stats_df['Opponent'] = team_stats_df.apply(get_opponent,
-                                                args=[results_df], axis=1)
+team_stats_df = pd.read_sql_query("""SELECT * FROM teams_stats_by_gw""", conn)
+players_stats_df = pd.read_sql_query(
+    """SELECT * FROM PLAYERS_stats_by_gw""", conn)
+players_info_df = pd.read_sql_query("""SELECT * FROM players_info""", conn)
+results_df = pd.read_sql_query("""SELECT * FROM matches_results""", conn)
+
+# import data from csv files
+# team_stats_df = pd.read_csv(os.path.join(data_dir, 'teams_stats_by_gw.csv'))
+# players_stats_df = pd.read_csv(os.path.join(data_dir,
+#                                             'players_stats_by_gw.csv'))
+# players_info_df = pd.read_csv(os.path.join(data_dir, 'players_info.csv'))
+# results_df = pd.read_csv(os.path.join(data_dir, 'matches_results.csv'))
+
+team_stats_df['Match result'] = team_stats_df.apply(
+    get_gw_match_result, args=(results_df,), axis=1)
+team_stats_df['Opponent'] = team_stats_df.apply(
+    get_opponent, args=(results_df,), axis=1)
 
 
 # Creates tabs
@@ -37,3 +49,7 @@ tab3 = players_performance_tab(players_info_df, players_stats_df, results_df)
 tabs = Tabs(tabs=[tab1, tab2, tab3])
 
 curdoc().add_root(tabs)
+
+
+
+# print(team_stats_df.info())
