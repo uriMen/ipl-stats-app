@@ -9,7 +9,7 @@ Some example plots:
 
 ## Motivation
 
-Creating an end-to-end data project with python, which includes collecting (web scraping with [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) and [Selenium](https://selenium-python.readthedocs.io/)), cleaning and manipulating (with [Pandas](https://pandas.pydata.org/pandas-docs/stable/)) and visualizing (with [Bokeh](https://docs.bokeh.org/en/latest/)) the data.
+Creating an end-to-end data project with python, which includes collecting the data (web scraping with [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/) and [Selenium](https://selenium-python.readthedocs.io/)) and storing it in a database (with [Sqlite3](https://docs.python.org/3.7/library/sqlite3.html)) , cleaning and manipulating (with [Pandas](https://pandas.pydata.org/pandas-docs/stable/)), and visualizing it (with [Bokeh](https://docs.bokeh.org/en/latest/)).
 
 ## Usage
 
@@ -27,7 +27,7 @@ Now, download the directory as is, open you terminal and navigate to the directo
 
 ## Update Data Tables
 
-The app now runs with the downloaded data tables, which are probably not updated. In order to update them you'll need to run `main_data_collector.py` which is found under `data_scraping/scripts`, but before you do that you'll have to do the following:
+The app now runs with the downloaded data stored in the `ipl_data.db` file found under `/data_scraping/data/`, which are probably not updated. In order to update them you'll need to run `create_db.py` which is found under `data_scraping/scripts`, but before you do that you'll have to do the following:
 * pip install additional packages for web scraping:
   >selenium, beautifulsoup4, datetime
 * Download [Chrome WebDriver](https://sites.google.com/a/chromium.org/chromedriver/downloads) and place it in `data_scraping/scripts`
