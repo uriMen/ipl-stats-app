@@ -31,23 +31,23 @@ def attacks_origin_tab(team_stats_df):
         if opp_attacks:
             col_of_interest = 'Opponent'
         else:
-            col_of_interest = 'Team'
+            col_of_interest = 'team'
 
         df = team_stats_df.groupby(by=col_of_interest).sum()
         df.reset_index(inplace=True)
 
-        cols = {'total': ['Left Flank Attacks',
-                          'Right Flank Attacks',
-                          'Center Flank Attacks'],
-                'with_shot': ['Left Flank Attacks With Shot',
-                              'Right Flank Attacks With Shot',
-                              'Center Flank Attacks With Shot']}
-        cols_map = {'Left Flank Attacks': 'Left Field',
-                    'Right Flank Attacks': 'Right Field',
-                    'Center Flank Attacks': 'Center',
-                    'Left Flank Attacks With Shot': 'Left Field',
-                    'Right Flank Attacks With Shot': 'Right Field',
-                    'Center Flank Attacks With Shot': 'Center'}
+        cols = {'total': ['left_flank_attacks',
+                          'right_flank_attacks',
+                          'center_flank_attacks'],
+                'with_shot': ['left_flank_attacks_with_shot',
+                              'right_flank_attacks_with_shot',
+                              'center_flank_attacks_with_shot']}
+        cols_map = {'left_flank_attacks': 'Left Field',
+                    'right_flank_attacks': 'Right Field',
+                    'center_flank_attacks': 'Center',
+                    'left_flank_attacks_with_shot': 'Left Field',
+                    'right_flank_attacks_with_shot': 'Right Field',
+                    'center_flank_attacks_with_shot': 'Center'}
         if with_shot:
             data = df[df[col_of_interest] == team][
                 cols['with_shot']].reset_index(drop=True)
@@ -119,7 +119,7 @@ def attacks_origin_tab(team_stats_df):
         layout.children[1::2] = [row(p1, p2), row(p3, p4)]
 
     # Select-Team widget
-    teams = sorted(list(team_stats_df['Team'].unique()))
+    teams = sorted(list(team_stats_df['team'].unique()))
     select_team = Select(title='Select a Team', value='Beitar Jerusalem',
                          options=teams)
 

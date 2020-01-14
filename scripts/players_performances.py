@@ -32,13 +32,13 @@ def players_performance_tab(player_info_df, player_stats_df, results_df):
 
         if team == 'All':
             ds = pd.DataFrame(joined_player_df[
-                                  joined_player_df['Position'].isin(
+                                  joined_player_df['position'].isin(
                                       positions)])
         else:
             ds = pd.DataFrame(joined_player_df[
-                                  (joined_player_df['Position'].isin(
+                                  (joined_player_df['position'].isin(
                                       positions)) &
-                                  (joined_player_df['Team'] == team)])
+                                  (joined_player_df['team'] == team)])
 
         # Add sizes
         if size.value != 'None':
@@ -83,8 +83,8 @@ def players_performance_tab(player_info_df, player_stats_df, results_df):
         p.circle(x=x.value, y=y.value, size='Size', color='Color',
                  alpha=0.5, source=source, hover_color='navy')
 
-        hover = HoverTool(tooltips=[('Player', '@Name'),
-                                    ('Team', '@Team'),
+        hover = HoverTool(tooltips=[('Player', '@name'),
+                                    ('Team', '@team'),
                                     (f'{x.value}', f'@{{{x.value}}}'),
                                     (f'{y.value}', f'@{{{y.value}}}'),
                                     (f'Opponent', f'@Opponent')])
@@ -107,17 +107,17 @@ def players_performance_tab(player_info_df, player_stats_df, results_df):
     # Create merged dataFrame of players stats and info
     joined_player_df = pd.merge(player_stats_df, player_info_df, on='pid',
                                 how='inner')
-    joined_player_df.drop(columns=['index_x'], inplace=True)
+    # joined_player_df.drop(columns=['index_x'], inplace=True)
     # Add columns: result (w/l/d), opponent
     joined_player_df['Opponent'] = joined_player_df.apply(get_opponent,
-                                                          args=[results_df],
+                                                          args=(results_df,),
                                                           axis=1)
-    joined_player_df['Result'] = joined_player_df.apply(get_gw_match_result,
-                                                        args=[results_df],
+    joined_player_df['result'] = joined_player_df.apply(get_gw_match_result,
+                                                        args=(results_df,),
                                                         axis=1)
 
     # Data filtering widgets by Team and Position
-    teams = ['All'] + sorted(list(player_info_df['Team'].unique()))
+    teams = ['All'] + sorted(list(player_info_df['team'].unique()))
     select_team = Select(title='Filter by Team', value='All', options=teams)
     select_team.on_change('value', update)
 
@@ -128,16 +128,16 @@ def players_performance_tab(player_info_df, player_stats_df, results_df):
 
     # Select stats to plot
     columns = [x for x in sorted(player_stats_df.columns)
-               if x not in ['index', 'pid', 'Gameweek', 'Season']]
-    x = Select(title='X Axis', value='Minutes', options=columns)
+               if x not in ['index', 'pid', 'gameweek', 'season']]
+    x = Select(title='X Axis', value='minutes', options=columns)
     x.on_change('value', update)
-    y = Select(title='Y Axis', value='Passes', options=columns)
+    y = Select(title='Y Axis', value='passes', options=columns)
     y.on_change('value', update)
     size = Select(title='Add Size Dimension', value='None',
                   options=['None'] + columns)
     size.on_change('value', update)
     color = Select(title='Add Color Segmentation', value='None',
-                   options=['None', 'Result', 'Gameweek', 'Position'])
+                   options=['None', 'result', 'gameweek', 'position'])
     color.on_change('value', update)
 
     widgets = widgetbox([select_team, select_position, x, y, size, color])

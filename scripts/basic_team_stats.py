@@ -37,13 +37,13 @@ def basic_teams_stats_tab(teams_stats_df):
             """
 
             if aggfunc == 'mean':
-                df = teams_stats_df.groupby(by='Team').mean()
+                df = teams_stats_df.groupby(by='team').mean()
             elif aggfunc == 'sum':
-                df = teams_stats_df.groupby(by='Team').sum()
+                df = teams_stats_df.groupby(by='team').sum()
             return df.loc[team_row.name, stat]
 
         df = teams_stats_df.pivot_table(
-            index='Team',
+            index='team',
             columns='Match result',
             values=comparison_stat,
             aggfunc=aggfunc)
@@ -64,7 +64,7 @@ def basic_teams_stats_tab(teams_stats_df):
         map_agg_func = ('mean', 'sum')
         data = create_data_source(comparison_stat, map_agg_func[agg_func])
         source = ColumnDataSource(data=data)
-        teams = list(source.data['Team'])
+        teams = list(source.data['team'])
 
         # Plot avg stat per game
 
@@ -75,7 +75,7 @@ def basic_teams_stats_tab(teams_stats_df):
         hover.point_policy = 'follow_mouse'
         p_1.add_tools(hover)
 
-        p_1.vbar(x='Team', top='Total', source=source, width=0.4,
+        p_1.vbar(x='team', top='Total', source=source, width=0.4,
                  color=Spectral4[0])
 
         p_1.x_range.range_padding = 0.05
@@ -89,11 +89,11 @@ def basic_teams_stats_tab(teams_stats_df):
                      plot_width=700, tools='hover', tooltips='@$name',
                      title='Breakdown by Match Result')
 
-        w = p_2.vbar(x=dodge('Team', -0.25, range=p_2.x_range), top='w',
+        w = p_2.vbar(x=dodge('team', -0.25, range=p_2.x_range), top='w',
                      width=0.2, source=source, color=Spectral4[1], name='w')
-        d = p_2.vbar(x=dodge('Team', 0.0, range=p_2.x_range), top='d',
+        d = p_2.vbar(x=dodge('team', 0.0, range=p_2.x_range), top='d',
                      width=0.2, source=source, color=Spectral4[2], name='d')
-        l = p_2.vbar(x=dodge('Team', 0.25, range=p_2.x_range), top='l',
+        l = p_2.vbar(x=dodge('team', 0.25, range=p_2.x_range), top='l',
                      width=0.2, source=source, color=Spectral4[3], name='l')
 
         legend_it = [('Won', [w]), ('Drew', [d]), ('Lost', [l])]
@@ -119,7 +119,7 @@ def basic_teams_stats_tab(teams_stats_df):
         layout.children[1:] = [p1, p2]
 
     # Widgets
-    select_stat = Select(title="Select a Stat for Comparison:", value="Goal",
+    select_stat = Select(title="Select a Stat for Comparison:", value="goal",
                          options=list(teams_stats_df.columns)[1:-3])
     select_stat.on_change('value', update)
 
