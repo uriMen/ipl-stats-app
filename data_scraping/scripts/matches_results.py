@@ -69,13 +69,13 @@ def get_results(driver):
             row['Stadium'] = match_info[5].text
             rows.append(row)
 
-    results_df = pd.DataFrame(data=rows, columns=rows[0].keys())
+    # results_df = pd.DataFrame(data=rows, columns=rows[0].keys())
 
-    return results_df
+    return rows  # results_df
 
 
 if __name__ == '__main__':
     driver = initiate_driver()
-    df = get_results(driver)
+    # df = get_results(driver)
     driver.close()
-    df.to_csv('matches_results.csv', index=False)
+    # df.to_csv('matches_results.csv', index=False)

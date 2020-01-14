@@ -4,7 +4,8 @@
 
 import os
 
-from data_scraping.scripts import stats, matches_results, players_info
+from data_scraping.scripts import stats, matches_results, players_info, \
+    create_db
 
 data_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'data')
 

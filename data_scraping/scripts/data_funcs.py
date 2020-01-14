@@ -1,5 +1,5 @@
 #! python 3
-# data_funcs.py - sunctions for data manipulating.
+# data_funcs.py - functions for data manipulating.
 
 
 def get_gw_match_result(row, results_df):
@@ -8,11 +8,11 @@ def get_gw_match_result(row, results_df):
     :param row: pd.Series. A row of player/team stats DataFrame.
     :param results_df: results_df: pd.DataFrame. Matches results table.
     """
-    match_row = results_df[(results_df.isin([row['Team']]).any(axis=1)) &
-                           (results_df['Gameweek'] == row['Gameweek'])]
+    match_row = results_df[(results_df.isin([row['team']]).any(axis=1)) &
+                           (results_df['gameweek'] == row['gameweek'])]
 
-    result = match_row.iloc[0]['Winner']
-    if result == row['Team']:
+    result = match_row.iloc[0]['winner']
+    if result == row['team']:
         return 'w'
     elif result == 'Draw':
         return 'd'
@@ -26,10 +26,10 @@ def get_opponent(row, results_df):
     :param row: pd.Series. A row of player/team stats DataFrame.
     :param results_df: pd.DataFrame. Matches results table.
     """
-    match_row = results_df[(results_df.isin([row['Team']]).any(axis=1)) &
-                           (results_df['Gameweek'] == row['Gameweek'])].iloc[0]
+    match_row = results_df[(results_df.isin([row['team']]).any(axis=1)) &
+                           (results_df['gameweek'] == row['gameweek'])].iloc[0]
 
-    if match_row['Home team'] == row['Team']:
-        return match_row['Away team']
+    if match_row['home_team'] == row['team']:
+        return match_row['away_team']
     else:
-        return match_row['Home team']
+        return match_row['home_team']

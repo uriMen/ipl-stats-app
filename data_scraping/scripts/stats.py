@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as ec
 from selenium.common import exceptions
 from selenium.webdriver.common.keys import Keys
+
 # from datetime import datetime
 
 # import time
@@ -52,7 +53,7 @@ def unfold_players(driver):
 
 
 def select_item_type(driver, item_type):
-    """
+    """Choose between players/teams stats view.
 
     :param driver: webdriver object
     :param item_type: str. 'player' or 'team'
@@ -201,8 +202,8 @@ def create_stats_df(items_stats, season, gw, item_type='player'):
 
     id_col_name = {'player': 'pid', 'team': 'Team'}
     df = pd.DataFrame(data=rows_for_df,
-                      columns=[id_col_name[item_type]]
-                              + list(items_stats.keys()))
+                      columns=[id_col_name[item_type]] +
+                              list(items_stats.keys()))
 
     df['Season'] = season
     df['Gameweek'] = gw
@@ -218,13 +219,16 @@ def stats_per_game_wrapper(driver, item_type='player'):
     """
 
     seasons = ['19/20']
-    gws = range(1, 9)
+    gws = range(1, 18)
     df = pd.DataFrame()
     select_item_type(driver, item_type)
 
     # unfold hidden items on web page
     unfold_stats(driver)
     unfold_players(driver)
+
+    # for sqlite db
+    data_tuples = []
 
     for season in seasons:
         select_season(driver, season)
@@ -244,14 +248,16 @@ def stats_per_game_wrapper(driver, item_type='player'):
                 select_position(driver, 'all')
 
             scraped_stats = stats_scraper(poi, item_type)
-            temp_df = create_stats_df(scraped_stats, season, gw, item_type)
-            df = df.append(temp_df, ignore_index=True, sort=False)
+            # temp_df = create_stats_df(scraped_stats, season, gw, item_type)
+            # df = df.append(temp_df, ignore_index=True, sort=False)
 
-    return df
+            # for sqlite db
+            data_tuples.append((scraped_stats, season, gw))
+
+    return data_tuples  # df
 
 
 if __name__ == '__main__':
-
     driver = initiate_driver()
     # p_df = stats_per_game_wrapper(driver, 'player')
     p_df = pd.read_csv('players_stats_by_gw.csv')

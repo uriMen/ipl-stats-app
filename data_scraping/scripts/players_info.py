@@ -11,6 +11,9 @@ from datetime import datetime
 
 def get_player_info(driver, player_id):
     """Scrape player info from his own url. Returns dict."""
+    # Rename positions
+    positions = {'defenseman': 'Defender', 'mid-fielder': 'Midfielder',
+                 'goalie': 'GK', 'forward': 'Forward'}
 
     try:
         driver.get(f'https://www.football.co.il/en/player/{player_id}')
@@ -28,7 +31,8 @@ def get_player_info(driver, player_id):
         p_row['Name'] = name_number.split(' | ')[0]
         p_row['Shirt number'] = name_number.split(' | ')[1]
         p_row['Team'] = p_info.split(' | ')[0].split('Team: ')[1]
-        p_row['Position'] = p_info.split(' | ')[1].split('Position: ')[1]
+        position = p_info.split(' | ')[1].split('Position: ')[1]
+        p_row['Position'] = positions[position]
         dob = p_info.split(' | ')[2].split('Date of birth: ')[1]
         p_row['Date of birth'] = datetime.strptime(dob, '%d.%m.%y')
         return p_row
@@ -48,9 +52,9 @@ def create_players_info_df(driver, p_ids):
             rows.append(row)
     p_info_df = pd.DataFrame(data=rows)
     # Rename positions
-    positions = {'defenseman': 'Defender', 'mid-fielder': 'Midfielder',
-                 'goalie': 'GK', 'forward': 'Forward'}
-    p_info_df.replace(positions, inplace=True)
+    # positions = {'defenseman': 'Defender', 'mid-fielder': 'Midfielder',
+    #              'goalie': 'GK', 'forward': 'Forward'}
+    # p_info_df.replace(positions, inplace=True)
 
     return p_info_df
 
@@ -76,8 +80,4 @@ def update_player_info_df(driver, p_ids):
     temp_df = temp_df.append(rows_to_add, ignore_index=True)
 
     return temp_df
-
-
-
-
 
