@@ -62,8 +62,7 @@ tab1 = basic_teams_stats_tab(team_stats_df)
 tabs = Tabs(tabs=[tab1, tab2, tab3])
 ```
 * Improvements to the data scripts:
-1. Make data table update-able: when running `main_data_collector.py` script 3 out of 4 tables are being fully recreated rather than being only updated if possible.
-2. Automate data updating with the app launching.
+1. Automate data updating with the app launching.
 
 ## Contact
 
